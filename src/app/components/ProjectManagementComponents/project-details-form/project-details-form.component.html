@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row align-items-end">
+    <h4 class="mb-0">Project Info</h4>
+
+  </div>
+</div>
+<br>
+<div *ngIf="MyProject">
+  <!-- <div *ngIf="MyProject | async"> -->
+
+
+<div>
+  <label style="color: #AFB6A6; font-weight: bold;" for="ProjectName">Project Name</label>
+
+  <input id="ProjectName" class="form-control" type="text" placeholder="{{MyProject.projectName}} " readonly>
+
+
+
+
+  <label style="color: #AFB6A6; font-weight: bold;" for="ProjectDescription">Project Description</label>
+
+  <input id="projectDescription" class="form-control" type="text" placeholder="{{MyProject.projectDescription}} "
+    readonly>
+
+
+
+
+
+  <label style="color: #AFB6A6; font-weight: bold;" for="ProjectDescription">Track</label>
+
+  <input *ngIf="MyTrack" id="projectDescription" class="form-control" type="text" placeholder="{{MyTrack.trackName}} "
+    readonly>
+
+
+
+
+  <label style="color: #AFB6A6; font-weight: bold;" for="ProjectDescription">Intake</label>
+
+  <input *ngIf="MyIntake" id="projectDescription" class="form-control" type="text" placeholder="{{MyIntake.intakeName}} "
+    readonly>
+
+
+</div>
+
+
+
+
+<app-update-project [MyIntake]="MyIntake" [MyTrack]="MyTrack" [MyProject]="MyProject"></app-update-project>

@@ -1,0 +1,17 @@
+<div *ngIf="taskSolutions">
+
+    <div class="d-flex flex-row" *ngFor="let ts of taskSolutions">
+
+        <button type="button" class=" btn border border-danger m-2" 
+        (click)="OnDelete(ts)" data-dismiss="modal">
+        <i class="fa fa-trash" aria-hidden="true" style="color: red;"></i></button>
+       
+       
+        <!-- <button class="btn btn-danger m-2" (click)="OnDelete(ts)">Delete</button> -->
+        <button (click)=download(ts) class="myButtonadd m-2">
+            {{ts.fileName}}
+        </button>
+       
+        
+    </div>
+</div>

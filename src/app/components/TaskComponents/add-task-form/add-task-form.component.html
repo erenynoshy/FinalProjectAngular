@@ -1,0 +1,58 @@
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4"
+  style="background-image: url('../../assets/images/bg_1.jpg')">
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-lg-7">
+        <h2 class="mb-0">Add Task</h2>
+        <p>Click to add task.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="custom-breadcrumns border-bottom">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span>Course</span>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span class="current">Add task</span>
+  </div>
+</div>
+<br>
+<div class="container">
+  <form [formGroup]="newTaskForm" (ngSubmit)="onSubmit(newTaskForm.value)">
+    <!-- <form > -->
+
+
+    <div class="form-group ">
+
+      <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;font-weight: bold;">Task
+        Name</label>
+
+      <input type="text" class="form-control" formControlName="TaskName" placeholder="Enter Task Name">
+    </div>
+    <div class="form-group">
+
+
+      <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;font-weight: bold;">Task
+        Description</label>
+
+      <input type="textarea" class="form-control" formControlName="Description" placeholder="Enter Task Description">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;font-weight: bold;">Due
+        Date</label>
+
+      <input type="date" class="form-control" formControlName="DueDate" placeholder="Enter Task Due Date">
+    </div>
+
+
+    <button class="myButton">Save</button>
+  </form>
+</div>
+<br>
+<br>

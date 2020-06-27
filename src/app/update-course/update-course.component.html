@@ -1,0 +1,60 @@
+<div *ngIf="MyCourse">
+
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Course</h4>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class=" prefix grey-text"></i>
+
+                        <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray; font-weight: bold;">Course Name</label>
+              
+          
+                        <input type="text" class="form-control validate" [(ngModel)]= MyCourse.courseName>
+                    </div>
+
+                    <div class="md-form mb-5">
+                        <i class=" prefix grey-text"></i>
+
+                        <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray; font-weight: bold;">Description</label>
+              
+          
+                        <input type="text" class="form-control validate" [(ngModel)]= MyCourse.description>
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class=" prefix grey-text"></i>
+                        <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray; font-weight: bold;">Enrollment Key</label>
+              
+          
+                        <input type="text" class="form-control validate" [(ngModel)]= MyCourse.enrollmentKey>
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class=" prefix grey-text"></i>
+
+                        <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray; font-weight: bold;">Course Duration</label>
+              
+          
+                        <input type="text" class="form-control validate" [(ngModel)]= MyCourse.intervalInDays>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button data-toggle="modal" data-target="#modalLoginForm" class="myButton"
+                        (click)="OnEdit()">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button class="myButtonadd" data-toggle="modal" data-target="#modalLoginForm">Edit Course</button>
+    </div>
+
+</div>

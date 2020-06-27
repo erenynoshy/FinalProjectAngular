@@ -1,0 +1,78 @@
+<div class="container m-2">
+
+  <button *ngIf="UserRole==='Instructor'" type="button" class="myButtonadd col-12" data-toggle="modal"
+    data-target="#myModal"><i class="fa fa-plus" aria-hidden="true"></i>  Material</button>
+  <!-- <button *ngIf= "UserRole==='Instructor'" class="myButtonadd col-12"><i class="fa fa-plus" aria-hidden="true"></i> Task</button>  -->
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Material</h4>
+        </div>
+        <div class="modal-body">
+
+       
+          <div>
+            <label style="color: #AFB6A6; font-weight: bold;" for="FilesCategory">Files Category</label>
+
+
+            <input type="text" [(ngModel)]="Category" class="form-control" id="FilesCategory"
+              aria-describedby="FilesCategoryHelp" placeholder="Enter Files Category" />
+            <small id="FilesCategoryHelp" class="form-text text-muted" style="color: #183661;">Ex. videos, source code,
+              documentation... etc</small>
+
+          </div>
+
+          <br />
+          <!---->
+          <div class="center">
+            <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+              (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+              <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                <!-- Optional custom content that replaces the the entire default content. -->
+                <button type="button" (click)="openFileSelector()">Browse Files</button>
+              </ng-template>
+            </ngx-file-drop>
+            <div class="upload-table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                  </tr>
+                </thead>
+                <tbody class="upload-name-style">
+                  <tr *ngFor="let item of files; let i=index">
+                    <td><strong>{{ item.relativePath }}</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          <!-- the submit part -->
+        </div>
+
+
+        <div class="modal-footer">
+          <form [formGroup]="newBlogForm" (ngSubmit)="onSubmit(newBlogForm.value)">
+            <!-- <button type="button" class="btn " style="background-color: #2eb82e;">Save changes</button> -->
+            <div class="container-login100-form-btn">
+              <button type="submit"   class="login100-form-btn" style="background-color: #2eb82e;">
+                Add
+              </button>
+            </div>
+          </form>
+          <button #closeModal type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

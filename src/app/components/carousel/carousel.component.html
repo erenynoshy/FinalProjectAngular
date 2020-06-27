@@ -1,0 +1,31 @@
+<!-- <ngb-carousel #carousel [interval]="2000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)" >
+  <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <div class="carousel-caption">
+      <h3>My slide {{i + 1}} title</h3>
+    </div>
+    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+      <div class="picsum-img-wrapper">
+        <img [src]="img" style="height: 300px; width: 100%;" alt="My image {{i + 1}} description">
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel> -->
+
+<div id="example1">
+   
+  <div class="rc-HeroBanner__container">
+    <div class="text">
+
+     <h1> Facilitating the education process </h1>
+      <h2> following up with students remotely, </h2>
+    <h3> documenting students’ projects for reference at any time.</h3>
+
+   
+  </div> 
+
+  <button type="button" class="btn btn-light" [routerLink]="['/login']" *ngIf="role==='out'">
+     <strong >Join for Free</strong></button>
+  
+
+  
+</div>

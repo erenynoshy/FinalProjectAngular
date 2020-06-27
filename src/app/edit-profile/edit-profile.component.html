@@ -1,0 +1,69 @@
+<!-- Button trigger modal -->
+<button type="button" class="myButton" data-toggle="modal" data-target="#exampleModalCenter">
+    Edit 
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <form [formGroup]="newBlogForm" (ngSubmit)="onSubmit(newBlogForm.value)">
+                <div class="form-group">
+                    <div class="picture">
+                    <div >
+                        <input type='file' formControlName="ProfileImage" (change)="readUrl($event)" class="text-center center-block file-upload">
+                        <img  [src]="imgsrc"  class="avatar picture-src" alt="avatar">
+                    </div>
+                    </div>
+              
+                  
+                  <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;">Name</label>
+              
+                  <input type="text" class="form-control" formControlName="userName" value={{UserData.userName}} id="exampleInputName1" aria-describedby="NameHelp" placeholder="Enter Name"/>
+                   </div>
+                
+                   <div class="form-group">
+
+                    <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;">Email address</label>
+              
+                    <input type="email" class="form-control" formControlName="email"  value={{UserData.email}}  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                     </div>
+                     <div class="form-group">
+                      <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;">City</label>
+              
+                    
+                      <input type="text" class="form-control" formControlName="city"  value={{UserData.city}}  id="exampleInputEil1" aria-describedby="emailHelp" placeholder="Enter city"/>
+                       </div>
+                       <div class="form-group">
+                        <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;">Phone Number</label>
+              
+
+                        <input type="text" class="form-control" formControlName="phoneNumber" value={{UserData.phoneNumber}}  id="exampleInpuail1" aria-describedby="emailHelp" placeholder="Enter phone number"/>
+                         </div>
+                         <div class="container-login100-form-btn">
+                          <button class="login100-form-btn"  class="myButtonadd" >
+                            Save
+                          </button>
+                        </div>
+                         <!-- <button type="button" style="background-color: #009900;" class="btn ">Save changes</button> -->
+                                     </form>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button #closebutton type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>

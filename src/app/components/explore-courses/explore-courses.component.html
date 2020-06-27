@@ -1,0 +1,68 @@
+
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('../../assets/images/bg_1.jpg')">
+        <div class="container">
+          <div class="row align-items-end">
+            <div class="col-lg-7">
+              <h2 class="mb-0">Explore</h2>
+              <p>Explore all branches tracks and courses in it.</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="custom-breadcrumns border-bottom">
+        <div class="container">
+          <a href="index.html">Home</a>
+          <span class="mx-3 icon-keyboard_arrow_right"></span>
+          <span >Explore</span>
+          <span class="mx-3 icon-keyboard_arrow_right"></span>
+          <span class="current">Course</span>
+        </div>
+      </div>
+      <div class="container " style="margin-top:10px" >
+
+      <!-- <mat-tree>
+        <mat-nested-tree-node>
+          parent node
+          <mat-nested-tree-node> -- child node1 </mat-nested-tree-node>
+          <mat-nested-tree-node> -- child node2 </mat-nested-tree-node>
+        </mat-nested-tree-node>
+     </mat-tree> -->
+
+      <div class="treeview w-20 border">
+        <h6 class="pt-3 pl-3"  style="color:black; font-weight: bold;" >Branches</h6>
+        <hr>
+        <ul class="mb-1 pl-3 pb-2" style="list-style-type:none">
+          
+          <li *ngFor="let branch of MyBranches">
+            <!-- <i class="fas fa-angle-right rotate"></i> -->
+            <span class="current" style="color: #12A200; font-weight: bold;"><i class="fa fa-home "  aria-hidden="true"></i>  {{branch.branchName}}</span>
+            <h6 class="pt-3 pl-3" style="color: #0A4899; font-weight: bold;">Tracks</h6>
+
+            <ul *ngFor="let track of MyTracks"  class="nested" style="list-style-type:none">
+              <li *ngIf="(branch.branchId == track.branchId)">
+                <span ><i class="fa fa-building" aria-hidden="true"></i>  {{track.trackName}}</span>
+
+                <h6 class="pt-3 pl-3" style="color: #C86A00; font-weight: bold;">Courses</h6>
+
+                <ul *ngFor="let course of MyCourses"  class="nested" style="list-style-type:none">
+                  <li *ngIf="(course.trackId == track.trackId)">
+                    <a (click)="getcourse(course.courseId)" style="cursor: pointer;"><i class="fa fa-book " aria-hidden="true"></i>  {{course.courseName}}</a>
+    
+                  </li>
+                </ul>
+
+
+              </li>
+            </ul>
+            
+          </li>
+          <li>
+            
+            
+          </li>
+        </ul>
+      </div>
+
+
+    
+</div>

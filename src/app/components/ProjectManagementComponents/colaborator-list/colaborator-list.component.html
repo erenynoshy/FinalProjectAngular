@@ -1,0 +1,40 @@
+
+<div class="container">
+  <div class="row align-items-end">
+      <h4 class="mb-0">Add Team Members</h4>
+      
+    </div>
+  </div>
+  <br>
+  <label  style="color: #AFB6A6; font-weight: bold;display: block;"for="FilesCategory">Project Members</label>
+  
+<div class="input-group mb-3">
+ 
+  <input [(ngModel)]="ColabEmailToBeAdded" type="email" class="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="button" (click)="OnAddColab()">Add</button>
+    </div>
+  </div>
+
+
+ 
+  <div *ngIf="MyColaborators"  class="d-flex flex-column justify-content-center">
+    <div *ngFor="let colab of MyColaborators ">
+
+      <div class="card  " style="width: 18rem; background-color: whitesmoke;">
+        <div class="card-body">
+          <app-colabborator-item [MyColaborator]="colab"></app-colabborator-item>
+          <div class="d-flex justify-content-around">
+
+            <div *ngIf="!colab.userProject.isOwner">
+              <a (click)="OnRemove($event,colab)" style="cursor: pointer;margin: 10px;"><i class="fa fa-trash" aria-hidden="true" style="color: red;"></i></a>
+          <a (click)="OnMakeOwner($event,colab)" style="cursor: pointer; margin: 10px;"><i class="fa fa-user" aria-hidden="true" style="color: green;"></i></a>
+        
+            </div>
+          </div> 
+        </div>
+      </div>
+
+    </div>
+  
+  </div>

@@ -1,0 +1,56 @@
+.myButton {
+	box-shadow: 0px 10px 14px -7px #51be78;
+	background:linear-gradient(to bottom, #51be78 5%, #408c99 100%);
+	background-color:#51be78;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:5px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #51be78;
+	margin: 10px;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #51be78 5%, #51be78 100%);
+	background-color:#8bc34a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.plusTd{
+    background:url(https://i.imgur.com/3hSkhay.png) center center no-repeat, rgba(0,0,0,.1);
+    width: 100px;
+    height:80px;
+    float:right;  
+}
+
+.myButtonadd {
+	box-shadow: 0px 10px 14px -7px #183661;
+	background:linear-gradient(to bottom, #183661 5%, #183661 100%);
+	background-color:#183661;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:5px 25px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #183661;
+    margin-bottom: 20px;
+}
+.myButtonadd:hover {
+	background:linear-gradient(to bottom, #183661 5%, #183661 100%);
+	background-color:#183661;
+}
+.myButtonadd:active {
+	position:relative;
+	top:1px;
+}

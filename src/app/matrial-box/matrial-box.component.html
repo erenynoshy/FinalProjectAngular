@@ -1,0 +1,29 @@
+<!-- <div class="col-lg-5 ml-auto align-self-center"> -->
+<div class="center border border-success p-5">
+
+    <h2 class="section-title-underline mb-5 text-center"> Material </h2>
+
+
+    <div>
+
+        <app-add-material (onAddingNewMaterial)="ReloadMaterials()"></app-add-material>
+    </div>
+    <div class="d-flex flex-col">
+        <div>
+
+            <div class="d-flex flex-row" *ngFor="let item of coursemateriallist ; ">
+                <div>
+
+                    <button type="button" *ngIf="UserRole === 'Instructor'" class=" btn border border-danger m-2" (click)="OnDelete(item)"
+                        data-dismiss="modal">
+                        <i class="fa fa-trash" aria-hidden="true" style="color: red;"></i></button>
+                </div>
+                <div>
+
+                    <button class="myButtonadd" (click)="download(item)">{{item.fileName}}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,109 @@
+<form  [formGroup]="service.form" class="normal-form" (ngSubmit)="onSubmit()">
+  <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4"
+    style="background-image: url('../../assets/images/bg_1.jpg')">
+    <div class="container">
+      <div class="row align-items-end">
+        <div class="col-lg-7">
+          <h2 class="mb-0">Add Course</h2>
+          <p>Add your courses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="custom-breadcrumns border-bottom">
+    <div class="container">
+      <a href="index.html">Home</a>
+      <span class="mx-3 icon-keyboard_arrow_right"></span>
+      <span class="current">Course</span>
+      <span class="mx-3 icon-keyboard_arrow_right"></span>
+      <span class="current">Add Course</span>
+    </div>
+  </div>
+
+
+
+  <div class="site-section">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <p>
+            <img src="assets/images/add-course.jpg" style="position: absolute; top: 150px;" class="img-fluid">
+          </p>
+        </div>
+        <div class="col-lg-5 ml-auto align-self-center">
+          <h2 class="section-title-underline mb-5">
+            <span>Add Course</span>
+          </h2>
+          <div class="row justify-content-center">
+            <div class="col-mb-5">
+              <div class="row">
+                <div class="picture">
+
+                  <div>
+                    <input type='file' (change)="readUrl($event)" class="text-center center-block file-upload">
+                    <img [src]="imgsrc" class="avatar picture-src" alt="avatar">
+
+                  </div><br>
+
+
+                </div>
+
+                <div class="col-md-12 form-group">
+                  <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;font-weight: bold;">Course name</label>
+
+                  <input formControlName="CourseName" type="text" class="form-control form-control-lg" id="CourseName">
+                </div>
+
+
+                <!-- <div class="form-group col-md-12">
+                        <label for="Category">Category </label>
+                        <input type="text" class="form-control form-control-lg" id="Category"  >
+                      </div> -->
+
+                <div class="form-group col-md-12">
+                  <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;font-weight: bold;">Description </label>
+
+                  <input formControlName="Description" type="text" class="form-control form-control-lg" id="Description">
+                </div>
+
+
+                <div class="form-group col-md-12">
+                  <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray;font-weight: bold;">Course duration  </label>
+          
+                  <input formControlName="IntervalInDays" type="text" class="form-control form-control-lg" id="IntervalInDays">
+                </div>
+
+
+
+                <div class="col-md-12 form-group">
+                  <label for="exampleFormControlInput1" class="col-sm-12 control-label" style="color: gray; font-weight: bold;">Enrollment key</label>
+          
+
+                  <input formControlName="EnrollmentKey" type="text" class="form-control form-control-lg" id="EnrollmentKey">
+                </div>
+
+                <!-- <div>
+
+                  <p> Today is {{today | date:'fullDate'}}</p>
+                  <p>The time is {{today | date:'h:mm a z'}}</p>
+                </div> -->
+
+
+
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button class="myButtonadd"  >Add</button>
+                  <!-- <input type="submit" value="Add" class="btn btn-primary btn-lg px-5"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,112 @@
+{
+  "Tracks": [
+    {
+      "TrackId": 14,
+      "TrackName": "Burris",
+      "BranchId": 10
+    },
+    {
+      "TrackId": 7,
+      "TrackName": "Mollie",
+      "BranchId": 5
+    },
+    {
+      "TrackId": 9,
+      "TrackName": "Johnnie",
+      "BranchId": 9
+    }
+  ],
+  "Branches": [
+    {
+      "BranchId": 9,
+      "BranchName": "Maura"
+    },
+    {
+      "BranchId": 10,
+      "BranchName": "Molina"
+    },
+    {
+      "BranchId": 5,
+      "BranchName": "Williamson"
+    }
+  ],
+  "Tasks": [
+    {
+      "TaskId": 6,
+      "id": 6,
+      "TaskName": "Forbes",
+      "TaskDescription": "blah blah blah",
+      "DueDate": "2/2/2000",
+      "CourseId": 37
+    },
+    {
+      "TaskId": 5,
+      "id": 5,
+      "TaskName": "ferds",
+      "TaskDescription": "blah blah blah",
+      "DueDate": "2/2/2000",
+      "CourseId": 37
+    },
+    {
+      "TaskId": 3,
+      "id": 3,
+      "TaskName": "tobass",
+      "TaskDescription": "blah blah blah",
+      "DueDate": "2/2/2000",
+      "CourseId": 37
+    }
+  ],
+
+  "Projects": [
+    {
+      "id": 0,
+      "ProjectId": 12,
+      "TrackId": 21,
+      "ProjectName": "Peck",
+      "ProjectDescription": "Pollard"
+    },
+    {
+      "id": 1,
+      "ProjectId": 19,
+      "TrackId": 21,
+      "ProjectName": "Byrd",
+      "ProjectDescription": "Yesenia"
+    },
+    {
+      "id": 2,
+      "ProjectId": 13,
+      "TrackId": 33,
+      "ProjectName": "Farmer",
+      "ProjectDescription": "Kelsey"
+    }
+  ],
+  "UserProject": [
+    {
+      "id": 0,
+     "User":
+      {
+        "Email":"a@a.com"
+      },
+      "UserProject":
+        {
+          "UserId":123,
+          "ProjectId":123,
+          "IsOwner":true
+        }
+    },
+    {
+      "id": 1,
+     "User":
+      {
+        "Email":"b@b.com"
+      },
+      "UserProject":
+        {
+          "UserId":123,
+          "ProjectId":123,
+          "IsOwner":false
+        }
+    }
+  ]
+
+}

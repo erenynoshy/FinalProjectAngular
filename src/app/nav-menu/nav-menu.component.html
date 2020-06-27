@@ -1,0 +1,89 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="site-logo">
+    <a [routerLink]="['/']" class="d-block navbar-brand">
+      <img src="../../assets/images/logo.jpg" alt="Image" class="img-fluid">
+    </a>
+  </div>
+
+
+      <!-- <li class="nav-item dropdown" > -->
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- dfdfdf -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" *ngIf="role==='Student'||role==='Instructor'">
+            <a class="nav-link" [routerLink]="['/course']">Courses</a>
+          </li>
+          <!-- <li class="nav-item" [show]="isLoggedIn" *ngIf="role==='Student'"> -->
+            <li class="nav-item" *ngIf="role==='Student'||role==='Instructor'">
+            <a class="nav-link" [routerLink]="['/Project']">Projects</a>
+          </li>
+
+          <!---->
+          <li class="nav-item dropdown" *ngIf="role==='Student'||role==='Instructor'">
+
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Explore
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['/explore/courses']">Courses</a>
+              <a class="dropdown-item" [routerLink]="['/explore/project']">Projects</a>
+              <!-- <div class="dropdown-divider"></div>
+
+             <a class="dropdown-item" href="#">Something else here</a> -->
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about']">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+          </li>
+          <li class="nav-item" *ngIf="role==='Admin'" >
+            <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+          </li>
+
+          <!-- -->
+          <li class="nav-item" *ngIf="role==='Admin'" >
+
+            <a class="nav-link" [routerLink]="['/admin/instructors']">Instructor</a>
+          </li>
+          <li class="nav-item" *ngIf="role==='Admin'" >
+            <a class="nav-link" [routerLink]="['/admin/branches']">Branch</a>
+          </li>
+          <li class="nav-item"  *ngIf="role==='Admin'" >
+            <a class="nav-link" [routerLink]="['/admin/tracks']">Track</a>
+          </li>
+       
+          <li class="nav-item" *ngIf="role==='Admin'"   >
+            <a class="nav-link" [routerLink]="['/admin/intake']">Intake</a>
+          </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                 </li> -->
+
+
+        </ul>
+
+      </div>
+  
+
+  <div class="col-lg-3 text-right auth">
+    <a [routerLink]="['/profile']" class=" mr-3" style="color: lightgrey;" *ngIf="role==='Student'||role==='Instructor'||role==='Admin'"><span class="auth icon-unlock-alt"></span>
+      Profile</a>
+      <a  class=" mr-3" style="color: lightgrey;" (click)="logout()" style="cursor: pointer;"*ngIf="role==='Student'||role==='Instructor'||role==='Admin'"><span class="auth icon-unlock-alt"></span>
+        Logout</a>
+    <a [routerLink]="['/login']" class="auth small mr-3" *ngIf="role==='out'"><span class="auth icon-unlock-alt"></span> Log In</a>
+    <a [routerLink]="['/register']" id="register" class="small btn px-4 py-2 rounded-1"*ngIf="role==='out'"><span class="icon-users"></span>
+      Register</a>
+  </div>
+
+
+</nav>

@@ -1,0 +1,225 @@
+<!-- <div class="limiter">
+	<div class="container-login100">
+		<div class="wrap-login100 p-t-85 p-b-20">
+			<form class="login100-form validate-form">
+				<span class="login100-form-title p-b-70">
+					Welcome
+				</span>
+
+	
+				<form [formGroup]="newBlogForm" (ngSubmit)="onSubmit(newBlogForm.value)">
+					<div class="picture">
+
+					
+
+						<img [src]="imgsrc" class="avatar picture-src" alt="avatar">
+						<div class="in">
+							<input type='file' formControlName="ProfileImage" (change)="readUrl($event)"
+								class="text-center center-block file-upload">
+						</div>
+
+				
+						<br>
+
+
+					</div>
+			
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
+						<label style="color: #AFB6A6; font-weight: bold;">UserName</label>
+						<input class="input100" type="text" formControlName="UserName">
+				
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter Email">
+						<label style="color: #AFB6A6; font-weight: bold;">Email</label>
+						<input class="input100" type="email" formControlName="Email">
+				
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<div class="wrap-input100 validate-input m-b-50" data-validate="Enter City">
+								<label style="color: #AFB6A6; font-weight: bold;">City</label>
+								<input class="input100" type="text" formControlName="City">
+						
+							</div>
+						</div>
+						<div class="col">
+							<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+								<label style="color: #AFB6A6; font-weight: bold;">Password</label>
+								<input class="input100" type="password" formControlName="Password">
+						
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<label style="color: #AFB6A6; font-weight: bold;" for="exampleFormControlSelect2">
+									Branch</label>
+								<select style="border: 0px; outline: 0px;"
+									style="border: 0px; outline: 0px;  border-bottom: 2px solid #CCCCCC;"
+									formControlName="branchId" class="input100"
+									(ngModelChange)="selectChangeBranch($event)">
+									<option *ngFor="let item of branches" [value]="item.id">
+										{{item.name}}
+									</option>
+
+								</select>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								<label style="color: #AFB6A6; font-weight: bold;" for="exampleFormControlSelect2">
+									Track</label>
+								<select style="border: 0px; outline: 0px;  border-bottom: 2px solid #CCCCCC;"
+									formControlName="trackId" class="input100"
+									(ngModelChange)="selectChangeTrack($event)">
+									<option *ngFor="let item of tracks" [value]="item.trackId">
+										{{item.trackName}}
+									</option>
+
+								</select>
+							</div>
+
+						</div>
+					</div>
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter intake">
+						<label style="color: #AFB6A6; font-weight: bold;">Intake</label>
+
+						<input class="input100" type="number" formControlName="IntakeId">
+				
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Register
+						</button>
+					</div>
+				</form>
+
+			</form>
+		</div>
+	</div>
+</div> -->
+
+<!--------------------------------->
+<div class="container">
+	<span class="login100-form-title p-b-70">
+		Welcome
+	</span>
+	<form [formGroup]="newBlogForm" (ngSubmit)="onSubmit(newBlogForm.value)">
+		<div class="picture">
+
+			<!-- <div> -->
+
+			<img [src]="imgsrc" class="avatar picture-src" alt="avatar">
+			<div class="in">
+				<input type='file' formControlName="ProfileImage" (change)="readUrl($event)"
+					class="text-center center-block file-upload">
+			</div>
+
+			<!-- </div> -->
+			<br>
+
+
+		</div>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<div class="wrap-input100 validate-input m-b-50" data-validate="Enter username">
+				<label style="color: #AFB6A6; font-weight: bold;">UserName</label>
+				<input class="input100" type="text" formControlName="UserName">
+				<!-- <span class="focus-input100" data-placeholder="Username"></span> -->
+			</div>
+		</div>
+		<div class="col">
+			<div class="wrap-input100 validate-input m-b-50" data-validate="Enter Email">
+				<label style="color: #AFB6A6; font-weight: bold;">Email</label>
+				<input class="input100" type="email" formControlName="Email">
+				<!-- <span class="focus-input100" data-placeholder="Email"></span> -->
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<div class="wrap-input100 validate-input m-b-50" data-validate="Enter City">
+				<label style="color: #AFB6A6; font-weight: bold;">City</label>
+				<input class="input100" type="text" formControlName="City">
+				<!-- <span class="focus-input100" data-placeholder="City"></span> -->
+			</div>
+		</div>
+		<div class="col">
+			<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
+			
+				<label style="color: #AFB6A6; font-weight: bold;">Password</label>
+				<input class="input100" type="password" formControlName="Password" id="Password">
+				<div *ngIf="Password?.errors.minlength">
+					Name must be at least 6 characters long.
+				  </div>
+				<!-- <span class="focus-input100" data-placeholder="Password"></span> -->
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<div class="form-group">
+				<label style="color: #AFB6A6; font-weight: bold;" for="exampleFormControlSelect2"> Branch</label>
+				<select style="border: 0px; outline: 0px;"
+					style="border: 0px; outline: 0px;  border-bottom: 2px solid #CCCCCC;" formControlName="branchId"
+					class="input100" (ngModelChange)="selectChangeBranch($event)">
+					<option *ngFor="let item of branches" [value]="item.id">
+						{{item.name}}
+					</option>
+
+				</select>
+			</div>
+		</div>
+		<div class="col">
+			<div class="form-group">
+				<label style="color: #AFB6A6; font-weight: bold;" for="exampleFormControlSelect2"> Track</label>
+				<select style="border: 0px; outline: 0px;  border-bottom: 2px solid #CCCCCC;" formControlName="trackId"
+					class="input100" (ngModelChange)="selectChangeTrack($event)">
+					<option *ngFor="let item of tracks" [value]="item.trackId">
+						{{item.trackName}}
+					</option>
+
+				</select>
+			</div>
+
+		</div>
+		<div class="col"></div>
+	</div>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<div class="wrap-input100 validate-input m-b-50" data-validate="Enter intake">
+				<label style="color: #AFB6A6; font-weight: bold;">Intake</label>
+
+				<input class="input100" type="number" formControlName="IntakeId">
+				<!-- <span class="focus-input100" data-placeholder="IntakeId"></span> -->
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
+			<div class="row">
+				<div class="col"></div>
+				<div class="col">
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn">
+						Register
+					</button>
+				</div>
+			</div>
+				<div class="col"></div>
+			</div>
+			<!-------------------->
+			</form>
+		</div>
+		<br/>
+		<br/>

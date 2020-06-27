@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row align-items-end">
+    <!-- <div class="col-lg-5"> -->
+
+
+    <h4 class="mb-0">Add Documentaionn</h4>
+
+  </div>
+</div>
+
+<br />
+<form [formGroup]="ProjectMaterial" (ngSubmit)="onSubmit(ProjectMaterial.value)">
+
+  <div class="form-group d-flex flex-column">
+
+    <div>
+  <label  style="color: #AFB6A6; font-weight: bold;"for="FilesCategory">Files Category</label>
+
+      
+      <input type="text" formControlName="Category" class="form-control" id="FilesCategory" aria-describedby="FilesCategoryHelp"
+        placeholder="Enter Files Category" />
+      <small id="FilesCategoryHelp" class="form-text text-muted" style="color: #183661;">Ex. videos, source code, documentation... etc</small>
+
+    </div>
+    <br>
+<!------------------------>
+
+
+
+    <!------------------->
+    <div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button type="submit" class="input-group-text" id="inputGroupFileAddon01">
+            Upload
+          </button>
+        </div>
+        <div class="custom-file">
+          <!-- [(ngModel)]="currentInput" -->
+          <input multiple="multiple" formControlName="MaterialFiles" (change)="onSelectFile($event)" type="file"
+            class="custom-file-input" id="files" aria-describedby="inputGroupFileAddon01" />
+
+          <label class="custom-file-label" for="inputGroupFile01"><span *ngIf="FilesNamesString">files</span></label>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <div *ngIf="selectedFile" >
+        <span  >{{ selectedFile.length}} files</span>
+      </div>
+
+    </div>
+  </div>
+</form>
+<br>
+<br>
+<br>
+<div *ngIf="MyMaterial" class="d-flex flex-column">
+  <div *ngFor="let category of MaterialCategories">
+
+   <h3>{{category}}</h3>
+    <div *ngFor="let mater of MyMaterial">
+      <div *ngIf="mater.category===category">
+
+        <app-projects-material-item [MyMaterial]="mater"></app-projects-material-item>
+        <a (click)="OnDelete(mater)" style="cursor: pointer;" class="myButtonadd"><i class="fa fa-trash" aria-hidden="true" ></i></a>
+        <!-- <button class="btn-danger" >Delete</button> -->
+      </div>
+    </div>
+  </div>
+</div>

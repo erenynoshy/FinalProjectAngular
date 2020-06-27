@@ -1,0 +1,6 @@
+<div class="m-y-5 d-flex justify-content-around  flex-wrap align-content-start">
+    <div class="col-lg-4 col-md-6 mb-4"  *ngFor="let course of AllCourses">
+        <app-course-card (onDeleteCourse)="DeleteChildCourse($event)" [Course]="course"></app-course-card>
+      
+    </div>
+</div>

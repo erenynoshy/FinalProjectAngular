@@ -1,0 +1,56 @@
+<div class="container">
+
+<div class="center border border-success p-5 " >
+
+    <!-- <h2 class="section-title-underline mb-5 text-center"> Tasks </h2> -->
+<!-- 
+    <h2 class="section-title-underline mb-5 text-center">
+        <span>Tasks</span>
+    </h2>
+
+    
+    <div *ngIf="MyTasks" class="upload-table text-center d-flex flex-column"> -->
+
+        <div class="center  ">
+            <!-- <div class="center border border-success p-5 "> -->
+        <h2 class="section-title-underline mb-5 text-center"> Tasks </h2>
+        <!--  -->
+        <div>
+
+            <button *ngIf= "UserRole==='Instructor'" (click)="OnAddTask($event)" class="myButtonadd col-12"><i class="fa fa-plus" aria-hidden="true"></i> Task</button> 
+        </div>
+        
+        <!-- <button (click)="OnAddTask($event)" class="btn-primary m-b-10 rounded ">Add Task</button> -->
+<!-- 
+            <app-task-card [MyTask]="task"></app-task-card>
+            <a (click)="OnDelete($event,task)" style="cursor: pointer;"> <i class="fa fa-trash" aria-hidden="true" style="color: red; margin:5px"></i></a>
+<a (click)="OnEdit($event,task)"style="cursor: pointer;"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color: green; margin:5px"></i></a>
+         
+             <br> -->
+        </div>
+
+        <div *ngIf="MyTasks" class="upload-table text-center d-flex flex-column">
+
+            <div *ngFor="let task of MyTasks" class="d-flex flex-column justify-content-center">
+                <div class="justify justify-content-center">
+                    <app-task-card [MyTask]="task"></app-task-card>
+                </div>
+
+                <div>
+                    <a (click)="OnDelete($event,task)" style="cursor: pointer;" *ngIf= "UserRole==='Instructor'"> <i class="fa fa-trash" aria-hidden="true" style="color: red; margin:5px"></i></a>
+                    <a (click)="OnEdit($event,task)"style="cursor: pointer;" *ngIf= "UserRole==='Instructor'"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color: green; margin:5px"></i></a>
+                </div>
+                <div *ngIf= "UserRole==='Student'" >
+
+                
+                    <app-task-solution   [MyTask]="task"></app-task-solution>
+                </div>
+                <!-- <button (click)="OnDelete($event,task)" class="btn-danger" *ngIf= "UserRole==='Instructor'"  >Delete</button> ||
+                <button (click)="OnEdit($event,task)" class="btn-success" *ngIf= "UserRole==='Instructor'" >Edit</button>|| -->
+                <!-- <app-task-solution   [MyTask]="task"> {{task.taskId}}  compppppppp</app-task-solution> -->
+               
+            </div>
+          
+        </div>
+    </div>
+</div>

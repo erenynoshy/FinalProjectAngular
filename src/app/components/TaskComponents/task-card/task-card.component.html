@@ -1,0 +1,29 @@
+<!-- <div class="container">
+<div id="accordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            {{MyTask.taskName}}  
+          </button>
+        </h5>
+        <h6>{{MyTask.dueDate}}</h6>
+      </div>
+  
+      <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            {{MyTask.description}}
+          </div>
+      </div>
+    </div>
+  </div> -->
+<div class="justify-content-center">
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">  {{MyTask.taskName}} </h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{MyTask.dueDate}}</h6>
+      <p class="card-text">{{MyTask.description}}</p>
+    </div>
+  </div>
+</div>

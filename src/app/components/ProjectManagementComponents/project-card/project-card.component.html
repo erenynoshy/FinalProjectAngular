@@ -1,0 +1,28 @@
+<!-- <div class="card text-white bg-secondary  mb-3" >
+    <div class="card-body  text-center">
+      <h3 class="card-title">{{MyProject.project.projectName}}</h3>
+      <p class="card-text">{{MyProject.project.projectDescription}}</p>
+      <div class="d-flex justify-content-between">
+
+        <button class="btn btn-primary" (click)="OnClickDetails()">Details</button>
+        <button class="btn btn-danger" (click)="OnClickDelete()"><span class="glyphicon glyphicon-trash">Delete</span></button>
+       
+      </div>
+     
+    </div>
+  </div> -->
+<!------------------------->
+<div class="card" style="width: 18rem;  margin:5px; background-color: whitesmoke;">
+  <div class="card-body">
+    <h5 class="card-title" style="color:darkblue;">{{MyProject.project.projectName}}</h5>
+    <hr/>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+   
+    <p class="card-text">{{MyProject.project.projectDescription}}</p>
+   
+    <a class="card-link" style="cursor: pointer; " (click)="OnClickDetails()"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color: green;"></i></a>
+   
+    <a *ngIf="MyProject.userproject.isOwner" class="card-link" style="cursor: pointer;" (click)="OnClickDelete()"><i class="fa fa-trash" aria-hidden="true" style="color: red;"></i></a>
+   <!-- na2es ngif the user is owner -->
+  </div>
+</div>

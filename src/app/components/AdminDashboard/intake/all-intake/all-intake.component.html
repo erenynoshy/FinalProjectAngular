@@ -1,0 +1,101 @@
+<div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('../../assets/images/bg_1.jpg')">
+    <div class="container">
+      <div class="row align-items-end">
+        <div class="col-lg-7">
+          <h2 class="mb-0">Intake</h2>
+          <p>Add .. Update .. Delete Track.</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+  
+  <div class="custom-breadcrumns border-bottom">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span class="current">Intake</span>
+  </div>
+  </div>
+  
+  
+   <!---------------------------->
+   <!-- <div class="container">
+    <div class="row m-2">
+  
+  <app-add-track></app-add-track>
+  <br/>
+  </div>
+  <div class="row m-2">
+  <table class="table border border-dark">
+      <thead> 
+        <tr>
+          <th >Name</th>
+          <th >Branch</th>
+          <th ></th>
+          <th ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tracks ;let i=index">
+        
+          <td>{{item.trackName}}
+          
+          </td>
+          <td>{{item.BranchName}}
+            
+          </td>
+          <td>
+            <input value="Edit" class="btn btn-success" (click)="getid(item.trackId)"/>
+          </td>
+          <td>
+             <input class="btn btn-success" value="Delete" (click)="deleteTrack(i)"> 
+            <i class="fa fa-times" aria-hidden="true"(click)="deleteTrack(i)"></i>
+          </td>
+        </tr>
+    
+      </tbody>
+    </table>
+  </div>
+  </div>
+     -->
+  
+  
+  
+  
+   
+  <div class="container " style="margin-top: 10px;">
+  
+  <table class="flatTable">
+    <tr class="titleTr">
+      <td class="titleTd">INTAKE</td>
+      <td colspan="4"></td>
+      <td > <app-add-intake></app-add-intake></td>
+    </tr>
+    <tr class="headingTr">
+      <td style="color:#183661; font-weight: bold;">INTAKEID</td>
+      <td style="color:#183661;font-weight: bold;">INTAKENAME</td>
+      <td style="color:#183661;font-weight: bold;">INTAKEDELETE</td>
+      
+    </tr>
+    
+  
+    <tr *ngFor="let item of intakes ;let i=index">
+      <td>{{item.intakeId}}
+          
+      </td>
+      <td>{{item.intakeName}}
+        
+      </td>
+  
+      <td class="controlTd text-center">      
+       
+        <i class="fa fa-times" aria-hidden="true"(click)="deleteTrack(i)"></i>
+       </td>
+    </tr>
+  
+  </table>
+  
+  
+  
+  </div>
